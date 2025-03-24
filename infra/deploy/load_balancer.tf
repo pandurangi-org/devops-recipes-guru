@@ -35,6 +35,7 @@ resource "aws_lb" "api" {
   subnets            = [aws_subnet.public_a.id, aws_subnet.public_b.id]
   security_groups    = [aws_security_group.lb.id]
 }
+<<<<<<< HEAD
 
 resource "aws_lb_target_group" "api" {
   name        = "${local.prefix}-api"
@@ -58,3 +59,5 @@ resource "aws_lb_listener" "api" {
     target_group_arn = aws_lb_target_group.api.arn
   }
 }
+=======
+>>>>>>> 5f50688d96ac756d13615c2fb3f12777bf5892dc
