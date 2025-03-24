@@ -92,7 +92,7 @@ resource "aws_ecs_task_definition" "api" {
         },
         {
           readOnly      = false
-          containerPath = "/vol/media"
+          containerPath = "/vol/web/media"
           sourceVolume  = "efs-media"
         }
       ],
@@ -131,7 +131,7 @@ resource "aws_ecs_task_definition" "api" {
         },
         {
           readOnly      = true
-          containerPath = "/vol/web/media"
+          containerPath = "/vol/media"
           sourceVolume  = "efs-media"
         }
       ]
