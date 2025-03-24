@@ -89,11 +89,11 @@ resource "aws_ecs_task_definition" "api" {
           readOnly      = false
           containerPath = "/vol/web/static"
           sourceVolume  = "static"
-          },
-          {
-            readOnly      = false
-            containerPath = "/vol/media"
-            sourceVolume  = "efs-media"
+        },
+        {
+          readOnly      = false
+          containerPath = "/vol/media"
+          sourceVolume  = "efs-media"
         }
       ],
       logConfiguration = {
@@ -128,11 +128,11 @@ resource "aws_ecs_task_definition" "api" {
           readOnly      = true
           containerPath = "/vol/static"
           sourceVolume  = "static"
-          },
-          {
-            readOnly      = true
-            containerPath = "/vol/web/media"
-            sourceVolume  = "efs-media"
+        },
+        {
+          readOnly      = true
+          containerPath = "/vol/web/media"
+          sourceVolume  = "efs-media"
         }
       ]
       logConfiguration = {
@@ -162,7 +162,7 @@ resource "aws_ecs_task_definition" "api" {
       }
     }
   }
-  
+
   runtime_platform {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
@@ -194,7 +194,7 @@ resource "aws_security_group" "ecs_service" {
   }
 
 
- # NFS Port for EFS volumes
+  # NFS Port for EFS volumes
   egress {
     from_port = 2049
     to_port   = 2049
